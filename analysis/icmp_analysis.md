@@ -9,14 +9,14 @@ icmp
 ```
 
 ## Example Packet Breakdown
-- **Packet Number:** 301
-- **Timestamp:** 2026-03-27 14:10:30.487
-- **Source IP:** 192.168.1.10
+- **Packet Number:** 18959
+- **Timestamp:** 2026-03-27 20:16:34.689
+- **Source IP:** 10.136.135.10
 - **Destination IP:** 8.8.8.8
 - **Type:** 8 (Echo Request)
-- **Identifier/Sequence:** id=0x0042, seq=1
+- **Identifier/Sequence:** id=0x0001, seq=226
 - **Frame Length:** 74 bytes
-- **Round-Trip Time:** 21 ms
+- **Round-Trip Time:** ~10 ms (reply in packet 18960)
 
 ## Step-by-Step Packet Behavior
 1. The client sends an Echo Request to the target IP.
@@ -30,3 +30,4 @@ icmp
 ## Evidence to Capture
 - **Wireshark Info Column:** `Echo (ping) request` / `Echo (ping) reply`
 - **Screenshot:** `screenshots/icmp_echo.png`
+- **Screenshot Reference:** `![ICMP Echo](../screenshots/icmp_echo.png)`

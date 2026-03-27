@@ -9,14 +9,25 @@ arp
 ```
 
 ## Example Packet Breakdown
-- **Packet Number:** 41
-- **Timestamp:** 2026-03-27 14:09:58.614
-- **Source IP:** 192.168.1.1
-- **Destination IP:** 192.168.1.10
-- **Opcode:** ARP Reply
-- **Sender MAC:** 3c:52:82:aa:bb:cc
-- **Target MAC:** 88:6b:0f:11:22:33
+**Request**
+- **Packet Number:** 117
+- **Timestamp:** 2026-03-27 20:12:27.571
+- **Source IP:** 10.136.135.1
+- **Destination IP:** 10.136.135.10
+- **Opcode:** ARP Request (1)
+- **Sender MAC:** 2c:c8:1b:99:11:a5 (sanitized)
+- **Target MAC:** 00:00:00:00:00:00
 - **Frame Length:** 60 bytes
+
+**Reply**
+- **Packet Number:** 118
+- **Timestamp:** 2026-03-27 20:12:27.571
+- **Source IP:** 10.136.135.10
+- **Destination IP:** 10.136.135.1
+- **Opcode:** ARP Reply (2)
+- **Sender MAC:** 38:7a:0e:d7:73:0f (sanitized)
+- **Target MAC:** 2c:c8:1b:99:11:a5 (sanitized)
+- **Frame Length:** 42 bytes
 
 ## Step-by-Step Packet Behavior
 1. A device broadcasts an ARP request: “Who has 192.168.1.10?”
@@ -28,5 +39,6 @@ arp
 - Attackers can send fake ARP replies to redirect traffic (man-in-the-middle risk).
 
 ## Evidence to Capture
-- **Wireshark Info Column:** `192.168.1.1 is at 3c:52:82:aa:bb:cc`
+- **Wireshark Info Column:** `Who has 10.136.135.10? Tell 10.136.135.1` and `10.136.135.10 is at 38:7a:0e:d7:73:0f`
 - **Screenshot:** `screenshots/arp_request_reply.png`
+- **Screenshot Reference:** `![ARP Request/Reply](../screenshots/arp_request_reply.png)`

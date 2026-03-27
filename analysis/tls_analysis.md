@@ -9,15 +9,15 @@ tls.handshake
 ```
 
 ## Example Packet Breakdown
-- **Packet Number:** 160
-- **Timestamp:** 2026-03-27 14:10:13.115
-- **Source IP:** 192.168.1.10
-- **Destination IP:** 142.250.74.110
-- **Source Port:** 51422
+- **Packet Number:** 4
+- **Timestamp:** 2026-03-27 20:12:16.733
+- **Source IP:** 10.136.135.10
+- **Destination IP:** 40.126.32.72
+- **Source Port:** 1332
 - **Destination Port:** 443
 - **Handshake Type:** Client Hello
-- **Server Name Indication (SNI):** `www.google.com`
-- **Frame Length:** 517 bytes
+- **Server Name Indication (SNI):** `login.microsoftonline.com`
+- **Frame Length:** 529 bytes
 
 ## Step-by-Step Packet Behavior
 1. Client sends **Client Hello** with supported cipher suites and SNI.
@@ -29,5 +29,6 @@ tls.handshake
 - Invalid or self-signed certificates are red flags for potential interception.
 
 ## Evidence to Capture
-- **Wireshark Info Column:** `Client Hello` / `Server Hello`
+- **Wireshark Info Column:** `Client Hello`
 - **Screenshot:** `screenshots/tls_client_hello.png`
+- **Screenshot Reference:** `![TLS Client Hello](../screenshots/tls_client_hello.png)`

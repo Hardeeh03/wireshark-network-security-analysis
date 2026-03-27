@@ -10,11 +10,11 @@ tcp.flags.syn == 1 and tcp.flags.ack == 0
 (Use follow-up filters to view the SYN/ACK and ACK packets.)
 
 ## Example Packet Breakdown
-- **Packet Number:** 152
-- **Timestamp:** 2026-03-27 14:10:13.008
-- **Source IP:** 192.168.1.10
-- **Destination IP:** 142.250.74.110
-- **Source Port:** 51422
+- **Packet Number:** 1
+- **Timestamp:** 2026-03-27 20:12:16.711
+- **Source IP:** 10.136.135.10
+- **Destination IP:** 40.126.32.72
+- **Source Port:** 1332
 - **Destination Port:** 443
 - **Flags:** SYN
 - **Frame Length:** 66 bytes
@@ -31,5 +31,6 @@ tcp.flags.syn == 1 and tcp.flags.ack == 0
 - Unusual TCP flags or incomplete handshakes can indicate scanning or failed connections.
 
 ## Evidence to Capture
-- **Wireshark Info Column:** `51422 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460`
+- **Wireshark Info Column:** `1332 → 443 [SYN] Seq=0 Win=65535 Len=0 MSS=1460 WS=256 SACK_PERM`
 - **Screenshot:** `screenshots/tcp_handshake.png`
+- **Screenshot Reference:** `![TCP Handshake](../screenshots/tcp_handshake.png)`
