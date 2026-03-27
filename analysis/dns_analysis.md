@@ -28,7 +28,7 @@ dns
 - **Response Time:** ~14.4 ms
 
 ## Step-by-Step Packet Behavior
-1. The client (192.168.1.10) sends a DNS query to the local resolver (192.168.1.1).
+1. The client (10.136.135.10) sends a DNS query to the resolver (130.43.187.40).
 2. The resolver responds with the A record for `example.com`.
 3. The client uses the resolved IP to initiate a TCP connection to the target host.
 

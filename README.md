@@ -85,9 +85,9 @@ python scripts/capture_tshark.py -i 1 -d 300
 - Output files are stored in `captures/` by default
 
 ## Evidence Artifacts
-- Screenshots: add images to `screenshots/` and link them from each analysis file.
-- Capture: add a sanitized sample to `captures/` (remove personal identifiers).
-  - The sample capture contains private `10.x.x.x` addresses; consider sanitizing or removing device-identifying fields before publishing.
+- Screenshots: stored in `screenshots/` and linked from each analysis file.
+- Capture: `captures/sample_capture.pcapng` is **not** committed to the repo.
+  - It contains private `10.x.x.x` addresses; sanitize or remove device-identifying fields before publishing.
 
 ## Key Findings
 - Most web traffic is encrypted (HTTPS/TLS), but DNS remains visible unless encrypted DNS is used.

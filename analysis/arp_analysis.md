@@ -15,7 +15,7 @@ arp
 - **Source IP:** 10.136.135.1
 - **Destination IP:** 10.136.135.10
 - **Opcode:** ARP Request (1)
-- **Sender MAC:** 2c:c8:1b:99:11:a5 (sanitized)
+- **Sender MAC:** 2c:c8:1b:99:11:a5
 - **Target MAC:** 00:00:00:00:00:00
 - **Frame Length:** 60 bytes
 
@@ -25,12 +25,12 @@ arp
 - **Source IP:** 10.136.135.10
 - **Destination IP:** 10.136.135.1
 - **Opcode:** ARP Reply (2)
-- **Sender MAC:** 38:7a:0e:d7:73:0f (sanitized)
-- **Target MAC:** 2c:c8:1b:99:11:a5 (sanitized)
+- **Sender MAC:** 38:7a:0e:d7:73:0f
+- **Target MAC:** 2c:c8:1b:99:11:a5
 - **Frame Length:** 42 bytes
 
 ## Step-by-Step Packet Behavior
-1. A device broadcasts an ARP request: “Who has 192.168.1.10?”
+1. A device broadcasts an ARP request: “Who has 10.136.135.10?”
 2. The target device responds with its MAC address.
 3. Both devices cache the mapping for future traffic.
 
