@@ -37,6 +37,25 @@ This project documents a hands-on Wireshark packet analysis lab focused on under
   - Pinged a public IP
 - Goal: Generate enough traffic to observe protocol behavior without capturing unrelated data
 
+## Analysis Workflow
+1. Start capture on the active interface for 3–5 minutes.
+2. Stop capture and save as `captures/sample_capture.pcapng`.
+3. Apply protocol filters one at a time.
+4. For each protocol:
+   - Identify an example packet
+   - Record packet number, timestamps, IPs, ports, and key fields
+   - Summarize behavior and security relevance
+5. Export or capture screenshots for key packet details.
+
+## Suggested Filters
+- DNS: `dns`
+- TCP handshake (SYN): `tcp.flags.syn == 1 and tcp.flags.ack == 0`
+- HTTP: `http`
+- HTTPS/TLS: `tls` or `tcp.port == 443`
+- ARP: `arp`
+- ICMP: `icmp`
+- TLS handshake: `tls.handshake`
+
 ## Protocols Analyzed
 - DNS
 - TCP (3-way handshake)
@@ -44,6 +63,14 @@ This project documents a hands-on Wireshark packet analysis lab focused on under
 - ARP
 - ICMP
 - TLS handshake
+
+## Analysis Files
+- `analysis/dns_analysis.md`
+- `analysis/tcp_handshake.md`
+- `analysis/http_https_analysis.md`
+- `analysis/arp_analysis.md`
+- `analysis/icmp_analysis.md`
+- `analysis/tls_analysis.md`
 
 ## Optional tshark Capture Script
 An optional script is provided in `scripts/capture_tshark.py` for CLI-based captures.
@@ -56,6 +83,10 @@ python scripts/capture_tshark.py -i 1 -d 300
 **Notes:**
 - List interfaces with `tshark -D`
 - Output files are stored in `captures/` by default
+
+## Evidence Artifacts
+- Screenshots: add images to `screenshots/` and link them from each analysis file.
+- Capture: add a sanitized sample to `captures/` (remove personal identifiers).
 
 ## Key Findings
 - Most web traffic is encrypted (HTTPS/TLS), but DNS remains visible unless encrypted DNS is used.

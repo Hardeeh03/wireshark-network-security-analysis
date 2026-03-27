@@ -9,12 +9,15 @@ dns
 ```
 
 ## Example Packet Breakdown
+- **Packet Number:** 143
 - **Timestamp:** 2026-03-27 14:10:12.451
 - **Source IP:** 192.168.1.10
 - **Destination IP:** 192.168.1.1
 - **Protocol/Port:** UDP 53
 - **Query:** `A` record for `example.com`
 - **Response:** `93.184.216.34`
+- **Frame Length:** 74 bytes
+- **Response Time:** 28 ms
 
 ## Step-by-Step Packet Behavior
 1. The client (192.168.1.10) sends a DNS query to the local resolver (192.168.1.1).
@@ -26,5 +29,6 @@ dns
 - Plaintext DNS can be spoofed, leading to malicious redirection.
 - Encrypted DNS (DoH/DoT) helps mitigate passive monitoring.
 
-## Screenshot Placeholder
-- **Screenshot:** DNS query and response details (expand the packet’s “Domain Name System (query/response)” section)
+## Evidence to Capture
+- **Wireshark Info Column:** `Standard query 0x4c9f A example.com` / `Standard query response 0x4c9f A 93.184.216.34`
+- **Screenshot:** `screenshots/dns_query_response.png`

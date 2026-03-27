@@ -10,20 +10,24 @@ http || tls
 
 ## Example Packet Breakdown
 **HTTP (plaintext)**
+- **Packet Number:** 248
 - **Timestamp:** 2026-03-27 14:10:21.902
 - **Source IP:** 192.168.1.10
 - **Destination IP:** 93.184.216.34
 - **Source Port:** 51601
 - **Destination Port:** 80
 - **Request:** `GET /` (visible in cleartext)
+- **Frame Length:** 517 bytes
 
 **HTTPS (encrypted)**
+- **Packet Number:** 176
 - **Timestamp:** 2026-03-27 14:10:14.233
 - **Source IP:** 192.168.1.10
 - **Destination IP:** 142.250.74.110
 - **Source Port:** 51422
 - **Destination Port:** 443
 - **Payload:** Encrypted TLS Application Data
+- **Frame Length:** 1514 bytes
 
 ## Step-by-Step Packet Behavior
 1. HTTP request is sent in cleartext and can be read directly in Wireshark.
@@ -34,5 +38,7 @@ http || tls
 - HTTP exposes URLs, cookies, and potentially credentials to anyone sniffing traffic.
 - HTTPS protects payloads but still leaks metadata (SNI, IPs, and timing).
 
-## Screenshot Placeholder
-- **Screenshot:** HTTP request line visible in packet details and TLS Application Data for HTTPS
+## Evidence to Capture
+- **Wireshark Info Column (HTTP):** `GET / HTTP/1.1`
+- **Wireshark Info Column (TLS):** `Application Data`
+- **Screenshots:** `screenshots/http_request.png`, `screenshots/https_tls_appdata.png`

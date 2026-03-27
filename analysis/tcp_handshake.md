@@ -10,12 +10,15 @@ tcp.flags.syn == 1 and tcp.flags.ack == 0
 (Use follow-up filters to view the SYN/ACK and ACK packets.)
 
 ## Example Packet Breakdown
+- **Packet Number:** 152
 - **Timestamp:** 2026-03-27 14:10:13.008
 - **Source IP:** 192.168.1.10
 - **Destination IP:** 142.250.74.110
 - **Source Port:** 51422
 - **Destination Port:** 443
 - **Flags:** SYN
+- **Frame Length:** 66 bytes
+- **TTL:** 128
 
 ## Step-by-Step Packet Behavior
 1. Client sends SYN to initiate a connection to port 443 (HTTPS).
@@ -27,5 +30,6 @@ tcp.flags.syn == 1 and tcp.flags.ack == 0
 - Handshakes reveal metadata even when payloads are encrypted.
 - Unusual TCP flags or incomplete handshakes can indicate scanning or failed connections.
 
-## Screenshot Placeholder
-- **Screenshot:** TCP handshake packets highlighted in packet list with flag details visible
+## Evidence to Capture
+- **Wireshark Info Column:** `51422 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460`
+- **Screenshot:** `screenshots/tcp_handshake.png`

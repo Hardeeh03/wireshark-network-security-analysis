@@ -9,6 +9,7 @@ tls.handshake
 ```
 
 ## Example Packet Breakdown
+- **Packet Number:** 160
 - **Timestamp:** 2026-03-27 14:10:13.115
 - **Source IP:** 192.168.1.10
 - **Destination IP:** 142.250.74.110
@@ -16,6 +17,7 @@ tls.handshake
 - **Destination Port:** 443
 - **Handshake Type:** Client Hello
 - **Server Name Indication (SNI):** `www.google.com`
+- **Frame Length:** 517 bytes
 
 ## Step-by-Step Packet Behavior
 1. Client sends **Client Hello** with supported cipher suites and SNI.
@@ -26,5 +28,6 @@ tls.handshake
 - TLS protects content but still exposes metadata like SNI and IPs.
 - Invalid or self-signed certificates are red flags for potential interception.
 
-## Screenshot Placeholder
-- **Screenshot:** TLS Client Hello with SNI field highlighted
+## Evidence to Capture
+- **Wireshark Info Column:** `Client Hello` / `Server Hello`
+- **Screenshot:** `screenshots/tls_client_hello.png`

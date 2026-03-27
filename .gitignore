@@ -1,0 +1,10 @@
+﻿# Ignore packet captures by default (can be large or sensitive)
+/captures/*.pcapng
+/captures/*.pcap
+
+# Allow a sanitized sample if you choose to include one
+!/captures/sample_capture.pcapng
+
+# OS junk
+Thumbs.db
+.DS_Store
